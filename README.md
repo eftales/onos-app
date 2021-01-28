@@ -12,6 +12,8 @@ onos-create-app
 bazel build onos
 ```
 
+如果非要用onos低版本的话，那就onos/apps文件夹下的原生onos应用，偷梁换柱一下
+
 ## how to compile
 ```
 mvn compile
