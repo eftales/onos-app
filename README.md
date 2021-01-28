@@ -1,10 +1,22 @@
 # onos-app
 ## onos版本
-version >= 2.5
+version >= 2.2
 
-现在是2021年1月27日，我使用master分支做实验没有问题，如果使用 onos-2.2 分支做实验，就一堆bug...
+onos-2.2 分支的 onos-create-app 工具有bug，创建出来的 onos-app 工程无法被onos加载
 
-TODO: 康康onos2.3是否可以
+推荐使用 master 分支的 onos-create-app 工具，创建好之后，再切换到 onos-2.2
+
+即：
+```
+cd ~/onos
+git checkout master
+cd ~
+onos-create-app # 用master分支的onos-create-app工具
+# 创建 app
+cd ~/onos
+git checkout onos-2.2 # 将版本切换为 onos-2.2.
+bazel build onos
+```
 
 ## how to compile
 ```
