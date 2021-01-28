@@ -1,20 +1,14 @@
 # onos-app
 ## onos版本
-version >= 2.2
+version >= 2.5
 
-onos-2.2 分支的 onos-create-app 工具有bug，创建出来的 onos-app 工程无法被onos加载
+version<2.5 的 onos-create-app 工具有bug，创建出来的 onos-app 工程无法被onos加载
 
-推荐使用 master 分支的 onos-create-app 工具，创建好之后，再切换到 onos-2.2
-
-即：
 ```
 cd ~/onos
-git checkout master
+git checkout onos-2.5 # 将版本切换为 onos-2.5
 cd ~
-onos-create-app # 用master分支的onos-create-app工具
-# 创建 app
-cd ~/onos
-git checkout onos-2.2 # 将版本切换为 onos-2.2.
+onos-create-app 
 bazel build onos
 ```
 
