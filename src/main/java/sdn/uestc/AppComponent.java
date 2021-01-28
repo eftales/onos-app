@@ -88,6 +88,7 @@ public class AppComponent {
 
     private PacketProcessor packetProcessor;
 
+    private short ppEthType = 0x09ab;
 
     //<- add 1 end
 
@@ -118,14 +119,14 @@ public class AppComponent {
 
     private void requestIntercepts() {
         TrafficSelector.Builder selector = DefaultTrafficSelector.builder();
-        selector.matchEthType(Ethernet.TYPE_IPV4);
+        selector.matchEthType(ppEthType);
         packetService.requestPackets(selector.build(), PacketPriority.REACTIVE, appId);
 
     }
 
     private void withdrawIntercepts() {
         TrafficSelector.Builder selector = DefaultTrafficSelector.builder();
-        selector.matchEthType(Ethernet.TYPE_IPV4);
+        selector.matchEthType(ppEthType);
         packetService.cancelPackets(selector.build(), PacketPriority.REACTIVE, appId);
     }
 
