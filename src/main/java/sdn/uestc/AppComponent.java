@@ -98,7 +98,7 @@ public class AppComponent {
 
         //-> add 2
 
-        appId = coreService.registerApplication("net.fnlab.fwd");
+        appId = coreService.registerApplication("sdn.uestc.onos-app");
         packetProcessor = new ReactivePacketProcessor();
         packetService.addProcessor(packetProcessor, PacketProcessor.director(2));
 
